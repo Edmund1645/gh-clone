@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Buycoins Assessment - GitHub clone</title>
+    <link rel="stylesheet" href="./assets/css/reset.css" />
+    <link rel="stylesheet" href="./assets/css/main.css" />
+  </head>
+  <body>
+    <header style="position: relative">
+      <nav class="main-nav">
+        <div class="container">
+          <div class="nav-content">
+            <img class="hide-desktop" src="./assets/icons/menu.svg" alt="menu icon" />
+            <div class="nav-items">
+              <a class="nav-link" href="#">
+                <img class="nav-logo" src="./assets/icons/gh-icon.svg" alt="Github logo" />
+              </a>
+
+              <input class="nav-input-field hide-mobile" type="text" placeholder="Search or jump to..." />
+
+              <ul class="nav-links hide-mobile">
+                <li class="nav-link">
+                  <a href="#">Pull requests</a>
+                </li>
+                <li class="nav-link">
+                  <a href="#">Issues</a>
+                </li>
+                <li class="nav-link">
+                  <a href="#">Marketplace</a>
+                </li>
+                <li class="nav-link">
+                  <a href="#">Explore</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="nav-items">
+              <img src="./assets/icons/bell.svg" alt="bell icon" />
+              <button class="hide-mobile">
+                <img src="./assets/icons/plus.svg" alt="plus icon" />
+                <img src="./assets/icons/caret-down.svg" alt="dropdown icon" />
+              </button>
+              <button class="hide-mobile">
+                <div class="nav-user-logo-wrapper">
+                  <img id="navAvatar" src="" alt="user-logo" class="" />
+                </div>
+
+                <img src="./assets/icons/caret-down.svg" alt="dropdown icon" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div class="nav-spacer hide-mobile"></div>
+      <div class="tabs-nav-wrapper hide-mobile">
+        <div class="container">
+          <nav class="tabs-nav">
+            <div class="left-menu hide-mobile"></div>
+            <div class="main-tabs">
+              <button class="main-tab-item">
+                <img src="./assets/icons/overview.svg" alt="overview icon" />
+                <span>Overview</span>
+              </button>
+              <button class="main-tab-item main-tab-item-active"><img src="./assets/icons/repositories.svg" alt="repositories icon" /><span>Repositories</span></button>
+              <button class="main-tab-item"><img src="./assets/icons/projects.svg" alt="projects icon" /><span>Projects</span></button>
+              <button class="main-tab-item">
+                <img src="./assets/icons/packages.svg" alt="packages icon" />
+                <span>Packages</span>
+              </button>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <main class="container">
+      <div class="main-content">
+        <section class="left-menu">
+          <div class="profile">
+            <div class="profile-image-container">
+              <img id="userAvatar" src="" alt="avatar" />
+            </div>
+            <div class="names-username">
+              <p id="name" class="profile-name"></p>
+              <p id="username" class="profile-username"></p>
+            </div>
+          </div>
+          <p id="bio" class="bio"></p>
+        </section>
+        <div class="tabs-nav-wrapper hide-desktop">
+          <nav class="tabs-nav">
+            <div class="main-tabs">
+              <button class="main-tab-item">
+                <span>Overview</span>
+              </button>
+              <button class="main-tab-item main-tab-item-active">
+                <span>Repositories</span>
+              </button>
+              <button class="main-tab-item">
+                <span>Projects</span>
+              </button>
+              <button class="main-tab-item">
+                <span>Packages</span>
+              </button>
+            </div>
+          </nav>
+        </div>
+        <section id="repoList" class="repo-list">
+          <div class="repo-search-container">
+            <input class="repo-search-input" type="text" placeholder="Find a repository..." />
+          </div>
+        </section>
+      </div>
+    </main>
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>
