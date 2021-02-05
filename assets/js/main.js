@@ -45,45 +45,42 @@ window.onload = function () {
 
   fetch(baseUrl)
     .then((response) => response.json())
-    .then((data) => console.log(data))
+    .then((data) => {
+      navAvatar.setAttribute('src', data.viewer.avatarUrl);
+      mainAvatar.setAttribute('src', data.viewer.avatarUrl);
+      name.textContent = data.viewer.name;
+      username.textContent = data.viewer.login;
+      bio.textContent = data.viewer.bio;
+      data.viewer.repositories.nodes.forEach((repository) => {
+        repoList.innerHTML += `
+              <div class="repo">
+                <div class="repo-main-data">
+                  <div class="repo-data">
+                    <a href="${repository.url}" class="repo-name">${repository.name}</a>
+                    <p class="repo-description">${repository.description || ''}</p>
+                  </div>
+                  <button class="star-button">
+                    <img src="./assets/icons/star.svg" alt="star icon" />
+                    <span>Star</span>
+                  </button>
+                </div>
+                <div class="repo-meta">
+                  <div class="${repository.primaryLanguage ? 'repo-language' : 'hide'}">
+                    <span style="background: ${repository.primaryLanguage?.color || ''};" class="repo-language-color"></span>
+                    <span class="repo-language-text">${repository.primaryLanguage?.name || ''}</span>
+                  </div>
+                  <div class="repo-stars">
+                    <img src="./assets/icons/star.svg" alt="star icon" />
+                    <span>${repository.stargazerCount}</span>
+                  </div>
+                  <div class="updated">
+                    <span>Updated ${timeAgo(repository.updatedAt)}</span>
+                  </div>
+                </div>
+              </div>
+          `;
+      });
+      bodyElement.style.opacity = 1; // remove jitters
+    })
     .catch((error) => console.log(error));
-
-  //     navAvatar.setAttribute('src', data.viewer.avatarUrl);
-  //     mainAvatar.setAttribute('src', data.viewer.avatarUrl);
-  //     name.textContent = data.viewer.name;
-  //     username.textContent = data.viewer.login;
-  //     bio.textContent = data.viewer.bio;
-
-  // data.viewer.repositories.nodes.forEach((repository) => {
-  //   repoList.innerHTML += `
-  //         <div class="repo">
-  //           <div class="repo-main-data">
-  //             <div class="repo-data">
-  //               <a href="${repository.url}" class="repo-name">${repository.name}</a>
-  //               <p class="repo-description">${repository.description || ''}</p>
-  //             </div>
-
-  //             <button class="star-button">
-  //               <img src="./assets/icons/star.svg" alt="star icon" />
-  //               <span>Star</span>
-  //             </button>
-  //           </div>
-
-  //           <div class="repo-meta">
-  //             <div class="${repository.primaryLanguage ? 'repo-language' : 'hide'}">
-  //               <span style="background: ${repository.primaryLanguage?.color || ''};" class="repo-language-color"></span>
-  //               <span class="repo-language-text">${repository.primaryLanguage?.name || ''}</span>
-  //             </div>
-  //             <div class="repo-stars">
-  //               <img src="./assets/icons/star.svg" alt="star icon" />
-  //               <span>${repository.stargazerCount}</span>
-  //             </div>
-
-  //             <div class="updated">
-  //               <span>Updated ${timeAgo(repository.updatedAt)}</span>
-  //             </div>
-  //           </div>
-  //         </div>
-  //     `;
-  // })
 };
