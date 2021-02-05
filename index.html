@@ -44,7 +44,7 @@
               </button>
               <button class="hide-mobile">
                 <div class="nav-user-logo-wrapper">
-                  <img src="" alt="user-logo" class="" />
+                  <img id="navAvatar" src="" alt="user-logo" class="" />
                 </div>
 
                 <img src="./assets/icons/caret-down.svg" alt="dropdown icon" />
@@ -78,13 +78,15 @@
       <div class="main-content">
         <section class="left-menu">
           <div class="profile">
-            <div class="profile-image"></div>
+            <div class="profile-image-container">
+              <img id="userAvatar" src="" alt="avatar" />
+            </div>
             <div class="names-username">
-              <p class="profile-name">Edmund Ekott</p>
-              <p class="profile-username">Edmund1645</p>
+              <p id="name" class="profile-name"></p>
+              <p id="username" class="profile-username"></p>
             </div>
           </div>
-          <p class="bio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, autem. Recusandae quibusdam dolore molestiae.</p>
+          <p id="bio" class="bio"></p>
         </section>
         <div class="tabs-nav-wrapper hide-desktop">
           <nav class="tabs-nav">
@@ -104,37 +106,9 @@
             </div>
           </nav>
         </div>
-        <section class="repo-list">
+        <section id="repoList" class="repo-list">
           <div class="repo-search-container">
             <input class="repo-search-input" type="text" placeholder="Find a repository..." />
-          </div>
-          <div class="repo">
-            <div class="repo-main-data">
-              <div class="repo-data">
-                <a href="#" class="repo-name">an awesome repo</a>
-                <p class="repo-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus, sunt?</p>
-              </div>
-
-              <button class="star-button">
-                <img src="./assets/icons/star.svg" alt="star icon" />
-                <span>Star</span>
-              </button>
-            </div>
-
-            <div class="repo-meta">
-              <div class="repo-language">
-                <span class="repo-language-color"></span>
-                <span class="repo-language-text">JS</span>
-              </div>
-              <div class="repo-stars">
-                <img src="./assets/icons/star.svg" alt="star icon" />
-                <span>1</span>
-              </div>
-
-              <div class="updated">
-                <span>Updated 2 days go</span>
-              </div>
-            </div>
           </div>
         </section>
       </div>

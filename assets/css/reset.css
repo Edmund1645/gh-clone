@@ -119,6 +119,8 @@ button:focus {
 button:hover {
   cursor: pointer;
 }
-image {
+img {
   vertical-align: center;
+  max-width: 100%;
+  object-fit: cover;
 }

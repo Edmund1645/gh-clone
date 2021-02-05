@@ -28,6 +28,10 @@ a:hover {
   transition: opacity 0.2s;
 }
 
+.hide {
+  display: none;
+}
+
 .container {
   max-width: 1440px;
   padding: 0 20px;
@@ -133,11 +137,12 @@ a:hover {
   display: flex;
 }
 
-.profile-image {
+.profile-image-container {
   width: 50px;
   height: 50px;
   border-radius: 50%;
   background: rebeccapurple;
+  overflow: hidden;
 }
 .profile-name {
   font-weight: 600;
@@ -169,7 +174,7 @@ a:hover {
 }
 
 .repo {
-  padding: 20px 0px;
+  padding: 25px 0px;
   border-bottom: 1px solid var(--gh-light-gray);
 }
 .repo-main-data {
@@ -206,6 +211,8 @@ a:hover {
 .repo-meta > * {
   display: flex;
   align-items: center;
+}
+.repo-meta > :not(:last-child) {
   margin-right: 20px;
 }
 .repo-meta > * > * {
@@ -217,7 +224,6 @@ a:hover {
   height: 15px;
   border: 1px solid var(--gh-light-gray);
   border-radius: 50%;
-  background: #f9826c;
 }
 
 .star-button {
@@ -278,7 +284,7 @@ a:hover {
     padding-left: 0;
   }
 
-  .profile-image {
+  .profile-image-container {
     width: 200px;
     height: 200px;
     position: relative;
@@ -292,7 +298,7 @@ a:hover {
   .left-menu {
     width: 400px;
   }
-  .profile-image {
+  .profile-image-container {
     width: 250px;
     height: 250px;
   }
