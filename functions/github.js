@@ -4,11 +4,14 @@ const headers = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Headers': 'Content-Type',
   'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE',
+  'Content-Type': 'application/json',
 };
 exports.handler = function (event, context, callback) {
   fetch(baseUrl, {
     method: 'POST',
     headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Content-Type': 'application/json',
       Authorization: `bearer ${process.env.GH_TOKEN}`,
     },
     body: JSON.stringify({

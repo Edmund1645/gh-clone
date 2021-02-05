@@ -7,7 +7,7 @@ window.onload = function () {
   const bio = document.querySelector('#bio');
   const repoList = document.querySelector('#repoList');
 
-  const baseUrl = '';
+  const baseUrl = 'https://gracious-kalam-f4b8cf.netlify.app/.netlify/functions/github';
 
   // show timestamp in readable format
   // Epochs
