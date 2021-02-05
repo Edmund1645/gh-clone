@@ -1,0 +1,299 @@
+:root {
+  --gh-deep-gray: #24292e;
+  --gh-mid-gray: #586069;
+  --gh-gray: #878a8d;
+  --gh-light-gray: #e7eaec;
+  --gh-off-white: #fafbfc;
+  --gh-orange: #f9826c;
+  --gh-green: #2ea44f;
+  --gh-blue: #0366d6;
+  --nav-spacing: 0.9rem;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 14px;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+a:hover {
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.container {
+  max-width: 1440px;
+  padding: 0 20px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.main-nav {
+  height: 60px;
+  background: var(--gh-deep-gray);
+}
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+.nav-items > * {
+  margin-right: var(--nav-spacing);
+}
+
+.nav-items {
+  display: flex;
+}
+
+.nav-input-field {
+  background: transparent;
+  border-radius: 5px;
+  border: 1.2px solid var(--gh-mid-gray);
+  padding: 5px 10px;
+  width: 300px;
+  font-size: 0.95rem;
+}
+.nav-input-field::placeholder {
+  color: var(--gh-gray);
+}
+.nav-input-field:focus {
+  background: #fff;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+.nav-link {
+  margin-right: var(--nav-spacing);
+  font-weight: 500;
+}
+.nav-link a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.nav-user-logo-wrapper {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.nav-spacer {
+  height: 40px;
+}
+.tabs-nav-wrapper {
+  position: sticky;
+  overflow-x: scroll;
+  top: 0;
+  border-bottom: 1px solid var(--gh-light-gray);
+  background: #fff;
+}
+.tabs-nav {
+  display: flex;
+  height: 60px;
+}
+.main-tabs {
+  display: flex;
+}
+.main-tab-item {
+  padding: 10px 20px;
+  border-bottom: 2px solid transparent;
+  color: var(--gh-mid-gray);
+  font-size: 1.01rem;
+  display: flex;
+  align-items: center;
+}
+.main-tab-item > img {
+  margin-right: 10px;
+}
+.main-tab-item-active {
+  border-bottom-color: var(--gh-orange);
+  color: var(--gh-deep-gray);
+  font-weight: 600;
+}
+
+.main-content {
+  position: relative;
+  padding-top: 10px;
+}
+
+.profile {
+  display: flex;
+}
+
+.profile-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rebeccapurple;
+}
+.profile-name {
+  font-weight: 600;
+  font-size: 1.7rem;
+  color: var(--gh-deep-gray);
+  padding: 5px 20px;
+}
+.profile-username {
+  font-weight: 300;
+  font-size: 1.5rem;
+  color: var(--gh-mid-gray);
+  padding: 5px 20px;
+}
+.bio {
+  color: var(--gh-deep-gray);
+  margin-top: 10px;
+  line-height: 1.5;
+}
+
+.repo-search-container {
+  padding: 15px 0px;
+  border-bottom: 1px solid var(--gh-light-gray);
+}
+.repo-search-input {
+  width: 100%;
+  border-radius: 5px;
+  border: 1.2px solid var(--gh-light-gray);
+  padding: 8px 16px;
+}
+
+.repo {
+  padding: 20px 0px;
+  border-bottom: 1px solid var(--gh-light-gray);
+}
+.repo-main-data {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.repo-data > :not(:last-child) {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.repo-name {
+  color: var(--gh-blue);
+  font-weight: 500;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+.repo-name:hover {
+  text-decoration: underline;
+  opacity: 1;
+}
+
+.repo-description {
+  color: var(--gh-mid-gray);
+}
+
+.repo-meta {
+  color: var(--gh-mid-gray);
+  display: flex;
+  align-items: center;
+}
+.repo-meta > * {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+.repo-meta > * > * {
+  margin-right: 4px;
+}
+.repo-language-color {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border: 1px solid var(--gh-light-gray);
+  border-radius: 50%;
+  background: #f9826c;
+}
+
+.star-button {
+  padding: 5px;
+  flex: 0 0 75px;
+  background: var(--gh-off-white);
+  color: var(--gh-deep-gray);
+  border-radius: 4px;
+  border: 1.8px solid var(--gh-light-gray);
+}
+.star-button img {
+  vertical-align: bottom;
+}
+
+/* media queries */
+
+@media screen and (max-width: 500px) {
+  .hide-mobile {
+    display: none;
+  }
+}
+
+/* tabs and below */
+@media screen and (max-width: 900px) {
+  .nav-input-field {
+    display: none;
+  }
+}
+
+/* tabs and above */
+@media screen and (min-width: 768px) {
+  .hide-desktop {
+    display: none;
+  }
+  .main-content {
+    display: flex;
+    align-items: flex-start;
+  }
+  .repo-list {
+    flex: 1 1 0%;
+    padding-right: 50px;
+  }
+  .left-menu {
+    width: 300px;
+    height: 100%;
+    padding: 0px 50px;
+  }
+  .tabs-nav {
+    overflow-x: hidden;
+  }
+  .profile {
+    display: block;
+  }
+  .profile-name {
+    padding-left: 0;
+  }
+  .profile-username {
+    padding-left: 0;
+  }
+
+  .profile-image {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    top: -40px;
+    left: 0px;
+    z-index: 3;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .left-menu {
+    width: 400px;
+  }
+  .profile-image {
+    width: 250px;
+    height: 250px;
+  }
+}
