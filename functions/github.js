@@ -1,11 +1,8 @@
 const fetch = require('node-fetch');
 const baseUrl = 'https://api.github.com/graphql';
-// const headers = {
-//   'Access-Control-Allow-Origin': '*',
-//   'Access-Control-Allow-Headers': 'Content-Type',
-//   'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE',
-//   'Content-Type': 'application/json',
-// };
+const headers = {
+  'Access-Control-Allow-Origin': '*',
+};
 exports.handler = function (event, context, callback) {
   fetch(baseUrl, {
     method: 'POST',
@@ -55,7 +52,7 @@ exports.handler = function (event, context, callback) {
     .then(({ data }) =>
       callback(null, {
         statusCode: 200,
-        // headers,
+        headers,
         body: JSON.stringify(data),
       })
     )
