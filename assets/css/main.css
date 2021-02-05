@@ -100,7 +100,6 @@ a:hover {
 }
 .tabs-nav-wrapper {
   position: sticky;
-  overflow-x: scroll;
   top: 0;
   z-index: 1;
   border-bottom: 1px solid var(--gh-light-gray);
@@ -245,6 +244,9 @@ a:hover {
 @media screen and (max-width: 500px) {
   .hide-mobile {
     display: none;
+  }
+  .tabs-nav-wrapper {
+    overflow-x: scroll;
   }
 }
 
