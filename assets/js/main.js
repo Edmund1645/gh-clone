@@ -43,11 +43,7 @@ window.onload = function () {
     return `${interval} ${epoch}${suffix} ago`;
   };
 
-  fetch(baseUrl, {
-    headers: {
-      method: 'GET',
-    },
-  })
+  fetch(baseUrl)
     .then((response) => response.json())
     .then((data) => console.log(data))
     .catch((error) => console.log(error));
